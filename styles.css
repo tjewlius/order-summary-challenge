@@ -152,5 +152,6 @@ main {
 @media (min-width: 768px) {
     html {
         background: var(--pale-blue) url(images/pattern-background-desktop.svg) no-repeat;
+        background-size: contain;
     }
 }
