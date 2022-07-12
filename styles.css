@@ -1,50 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap');
 
-:root {
-
-    /* colors */
- --pale-blue: hsl(225, 100%, 94%);
- --bright-blue: hsl(245, 75%, 52%);
- --very-pale-blue: hsl(225, 100%, 98%);
- --desaturated-blue: hsl(224, 23%, 55%);
- --dark-blue: hsl(223, 47%, 23%);
-
- /* font-family*/
- --font: 'Red Hat Display', sans-serif;
-}
-
 * {
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
-body {
-    background: var(--pale-blue) url(images/pattern-background-mobile.svg) no-repeat;
+:root {
+    --pale-blue: hsl(225, 100%, 94%);
+    --bright-blue: hsl(245, 75%, 52%);
+    --very-pale-blue: hsl(225, 100%, 98%);
+    --desaturated-blue: hsl(224, 23%, 55%);
+    --dark-blue: hsl(223, 47%, 23%);
+    --font: 'Red Hat Display', sans-serif;
+}
+
+html {
+    background: var(--pale-blue) url(/orderSummary/images/pattern-background-desktop.svg) no-repeat;
 }
 
 main {
-    font-size: 16px;
-    font-family: var(--font);
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 100%;
+    width: 85%;
+    height: auto;
+    margin: 50px auto;
 }
 
 #main__container {
-    height: 78%;
-    width: 80%;
-    max-width: 375px;
-    border-radius: 1rem;
-    background: var(--very-pale-blue);
-}
-
-.image__container {
-    max-width: 100%;
-    border-radius: 1rem 1rem 0 0;
+    width: 100%;
+    border-radius: 10px;
+    background-color: var(--very-pale-blue);
 }
 
 .image {
@@ -53,77 +37,89 @@ main {
 }
 
 .text__one {
-    width: 80%;
-    margin: 1.8rem auto;
     text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 16px;
 }
 
 .main__header {
-    color: var(--dark-blue);
+    font-weight: 900;
+    font-family: var(--font);
     text-transform: capitalize;
-    margin-bottom: 1rem;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
 }
 
 .paragraph {
+    font-family: var(--font);
+    font-weight: 700;
+    margin: 0 15px;
     color: var(--desaturated-blue);
 }
 
 .text__two {
-    width: 80%;
-    margin: 0 auto;
+    margin: 0 30px 30px;
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
-    margin-bottom: 2rem;
+    justify-content: space-between;
 }
 
 .plan {
     font-weight: 700;
     color: var(--dark-blue);
+    font-family: var(--font);
 }
 
 .price {
     color: var(--desaturated-blue);
+    font-family: var(--font);
+}
+
+.link-one {
+    color: var(--bright-blue);
+    font-family: var(--font);
     font-weight: 500;
+}
+
+.link-one:hover {
+    text-decoration: none;
 }
 
 .checkout__div {
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
+    padding-bottom: 25px;
 }
 
 .btn1 {
+    padding: 15px 0;
+    font-weight: 700;
     color: var(--very-pale-blue);
     background: var(--bright-blue);
     border: none;
-    margin-bottom: 1.5rem;
-    padding: 1rem 0;
-    border-radius: 0.7rem;
-    font-weight: 900;
-    font-size: 16px;
+    margin-bottom: 15px;
+    border-radius: 10px;
     cursor: pointer;
-}
-
-.btn2 {
-    font-weight: 900;
-    text-transform: capitalize;
-    color: var(--desaturated-blue);
-    border: none;
-    background: none;
-    border-top: 10px;
-    font-size: 16px;
-    cursor: pointer;
+    box-shadow: 0 0 2px 0px var(--bright-blue);
 }
 
 .btn1:hover {
-    opacity: 0.4;
+    opacity: 0.75;
 }
 
-.text__two p a:hover {
-    text-decoration: none;
-    opacity: 0.6;
+.btn2 {
+    text-transform: capitalize;
+    font-weight: 700;
+    font-family: var(--font);
+    color: var(--desaturated-blue);
+    padding: 10px 0;
+    border: none;
+    background: none;
+    font-size: 16px;
 }
 
 .btn2:hover {
@@ -131,20 +127,30 @@ main {
 }
 
 .attribution {
+    font-size: 10px;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    text-transform: capitalize;
 }
 
-.challenge-links {
-    margin-left: 1rem;
-    margin-top: 0.5rem;
+.attribution a {
+    color: var(--desaturated-blue);
 }
 
-.challenge-links:first-of-type {
-    margin-left: -5px;
+.attribution a:hover {
+    text-decoration: none;
 }
 
-@media (min-width: 600px) {
-    body {
-        background: var(--pale-blue) url(images/pattern-background-desktop.svg) no-repeat;
+@media (min-width: 450px) {
+ main {
+    max-width: 375px;
+ }   
+}
+
+@media (min-width: 768px) {
+    html {
+        background: var(--pale-blue) url(/orderSummary/images/pattern-background-mobile.svg) no-repeat;
     }
 }
